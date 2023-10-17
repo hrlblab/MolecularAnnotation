@@ -25,17 +25,41 @@ The contribution of this paper is threefold: <br />
 From the experimental results, our learning method achieved F1 = 0.8496 using molecular-informed annotations from lay annotators, which is better than conventional morphology-based annotations (F1 = 0.7015) from experienced pathologists. Our method democratizes the development of a pathological segmentation deep model to the lay annotator level, which consequently scales up the learning process similar to a non-medical computer vision task. <br />
 
 ## Multi-modality Registration
-Run the python scripts as the following orders to achieve multi-modality registration (originally from 3D multi-stain pathological image registration pipeline [Map3D](https://github.com/hrlblab/Map3D)): <br />
-1. Get PNGs from WSIs in 5X. [Step1_WSI_to_png_5X.py](Multi-modalityRegistration/Step1_WSI_to_png_5X.py) <br />
-2. Global alignment by SuperGlue. [Step2_superglue.py](Multi-modalityRegistration/Step2_superglue.py) <br />
-3. Apply global alignment to check the slide-wise registration performance. [Step3_ApplySGToMiddle.py](Multi-modalityRegistration/Step3_ApplySGToMiddle.py) <br />
-4. Prepare initial affine matrix for ANTs registration. [Step4_matrix_npytomat_5X.py](Multi-modalityRegistration/Step4_matrix_npytomat_5X.py) <br />
-5. Global alignment by ANTs. [Step5_SuperGlue+ANTs.py](Multi-modalityRegistration/Step5_SuperGlue+ANTs.py) <br />
-6. Apply second-step global alignment to check the slide-wise registration performance. [Step6_BigRecon_moveAllslicesToMiddle_IHCtoPAS.py](Multi-modalityRegistration/Step6_BigRecon_moveAllslicesToMiddle_IHCtoPAS.py) <br />
-7. Crop regions by using an affine matrix from either SuperGlue or Ants. [Step7.5_matrix_20Xmat_affine_4points_WSI_SGOnly.py](Multi-modalityRegistration/Step7.5_matrix_20Xmat_affine_4points_WSI_SGOnly.py) [Step7_matrix_20Xmat_affine_4points_WSI_SG+ANTs.py](Multi-modalityRegistration/Step7_matrix_20Xmat_affine_4points_WSI_SG+ANTs.py)  <br />
-8. pixel-level registration by AIRLab. [Step8_airlab_affine_registration_2d_PAS_2048.py](Multi-modalityRegistration/Step8_airlab_affine_registration_2d_PAS_2048.py) <br />
+Run the Python scripts as the following orders to achieve multi-modality registration (originally from 3D multi-stain pathological image registration pipeline [Map3D](https://github.com/hrlblab/Map3D)): <br />
+1. Get PNGs from WSIs in 5X. <br />
+[Step1_WSI_to_png_5X.py](Multi-modalityRegistration/Step1_WSI_to_png_5X.py) <br />
+2. Global alignment by SuperGlue. <br />
+[Step2_superglue.py](Multi-modalityRegistration/Step2_superglue.py) <br />
+3. Apply global alignment to check the slide-wise registration performance. <br />
+[Step3_ApplySGToMiddle.py](Multi-modalityRegistration/Step3_ApplySGToMiddle.py) <br />
+4. Prepare initial affine matrix for ANTs registration. <br />
+[Step4_matrix_npytomat_5X.py](Multi-modalityRegistration/Step4_matrix_npytomat_5X.py) <br />
+5. Global alignment by ANTs. <br />
+[Step5_SuperGlue+ANTs.py](Multi-modalityRegistration/Step5_SuperGlue+ANTs.py) <br />
+6. Apply second-step global alignment to check the slide-wise registration performance. <br />
+[Step6_BigRecon_moveAllslicesToMiddle_IHCtoPAS.py](Multi-modalityRegistration/Step6_BigRecon_moveAllslicesToMiddle_IHCtoPAS.py) <br />
+7. Crop regions by using an affine matrix from either SuperGlue or Ants. <br />
+[Step7.5_matrix_20Xmat_affine_4points_WSI_SGOnly.py](Multi-modalityRegistration/Step7.5_matrix_20Xmat_affine_4points_WSI_SGOnly.py) <br />
+[Step7_matrix_20Xmat_affine_4points_WSI_SG+ANTs.py](Multi-modalityRegistration/Step7_matrix_20Xmat_affine_4points_WSI_SG+ANTs.py)  <br />
+8. pixel-level registration by AIRLab. <br />
+[Step8_airlab_affine_registration_2d_PAS_2048.py](Multi-modalityRegistration/Step8_airlab_affine_registration_2d_PAS_2048.py) <br />
 
 ## Molecular-oriented corrective learning for partial label segmentation
+The segmentation pipeline is originally from a single dynamic network for partially labeled dataset [Omni-Seg](https://github.com/ddrrnn123/Omni-Seg).
 1. Use [train_2D_patch_omni-seg_selfloss.py](CorrectiveLearning/train_2D_patch_omni-seg_selfloss.py) to train the model.
 2. Use [Testing_2D_patch_omni-seg_ns.py](CorrectiveLearning/Testing_2D_patch_omni-seg_ns.py) to test the model.
+
+## Citation
+```
+@inproceedings{deng2023democratizing,
+  title={Democratizing Pathological Image Segmentation with Lay Annotators via Molecular-Empowered Learning},
+  author={Deng, Ruining and Li, Yanwei and Li, Peize and Wang, Jiacheng and Remedios, Lucas W and Agzamkhodjaev, Saydolimkhon and Asad, Zuhayr and Liu, Quan and Cui, Can and Wang, Yaohong and others},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={497--507},
+  year={2023},
+  organization={Springer}
+}
+
+```
+
 
