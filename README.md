@@ -6,7 +6,6 @@
 This is the official implementation of Democratizing Pathological Image Segmentation with Lay Annotators via Molecular-empowered Learning. 
 
 ![Overview](https://github.com/hrlblab/MolecularEL/blob/main/Problem.png)<br />
-![Pipeline](https://github.com/hrlblab/MolecularEL/blob/main/Pipeline.png)<br />
 
 **MICCAI2023 Paper** <br />
 > [Democratizing Pathological Image Segmentation with Lay Annotators via Molecular-empowered Learning](https://link.springer.com/chapter/10.1007/978-3-031-43987-2_48) <br />
@@ -23,6 +22,8 @@ The contribution of this paper is threefold: <br />
 (3) A deep corrective learning (learning with imperfect labels) method is proposed to further improve the segmentation performance using partially annotated noisy data. <br />
 
 From the experimental results, our learning method achieved F1 = 0.8496 using molecular-informed annotations from lay annotators, which is better than conventional morphology-based annotations (F1 = 0.7015) from experienced pathologists. Our method democratizes the development of a pathological segmentation deep model to the lay annotator level, which consequently scales up the learning process similar to a non-medical computer vision task. <br />
+
+![Pipeline](https://github.com/hrlblab/MolecularEL/blob/main/Pipeline.png)<br />
 
 ## Multi-modality Registration
 Run the Python scripts as the following orders to achieve multi-modality registration (originally from 3D multi-stain pathological image registration pipeline [Map3D](https://github.com/hrlblab/Map3D)): <br />
