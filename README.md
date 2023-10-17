@@ -1,12 +1,12 @@
 # Democratizing Pathological Image Segmentation with Lay Annotators via Molecular-empowered Learning
 
-### [[Project Page]](https://https://github.com/ddrrnn123/Omni-Seg/)   [[MICCAI2023 Paper]](https://link.springer.com/chapter/10.1007/978-3-031-43987-2_48)
+### [[Project Page]](https://https://github.com/ddrrnn123/Omni-Seg/)   [[MICCAI 2023 Paper]](https://link.springer.com/chapter/10.1007/978-3-031-43987-2_48)
 
 
 This is the official implementation of Democratizing Pathological Image Segmentation with Lay Annotators via Molecular-empowered Learning. 
 
-![Overview](https://github.com/ddrrnn123/Omni-Seg/blob/main/GithubFigure/Overview1.png)<br />
-![Docker](https://github.com/ddrrnn123/Omni-Seg/blob/main/GithubFigure/Overview2.png)<br />
+![Overview](https://github.com/hrlblab/MolecularEL/blob/main/Problem.png)<br />
+![Pipeline](https://github.com/hrlblab/MolecularEL/blob/main/Pipeline.png)<br />
 
 **MICCAI2023 Paper** <br />
 > [Democratizing Pathological Image Segmentation with Lay Annotators via Molecular-empowered Learning](https://link.springer.com/chapter/10.1007/978-3-031-43987-2_48) <br />
@@ -43,6 +43,8 @@ Run the Python scripts as the following orders to achieve multi-modality registr
 [Step7_matrix_20Xmat_affine_4points_WSI_SG+ANTs.py](Multi-modalityRegistration/Step7_matrix_20Xmat_affine_4points_WSI_SG+ANTs.py)  <br />
 8. pixel-level registration by AIRLab. <br />
 [Step8_airlab_affine_registration_2d_PAS_2048.py](Multi-modalityRegistration/Step8_airlab_affine_registration_2d_PAS_2048.py) <br />
+
+![CorrectiveLearning](https://github.com/hrlblab/MolecularEL/blob/main/CorrectiveLearning.png) <br />
 
 ## Molecular-oriented corrective learning for partial label segmentation
 The segmentation pipeline is originally from a single dynamic network for partially labeled dataset [Omni-Seg](https://github.com/ddrrnn123/Omni-Seg).
